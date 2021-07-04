@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>説明書</title>
+  <link rel="stylesheet" href="img/style.css">
+</head>
+
+<body>
+  <h1>BowelSoundAnalyzer -腸蠕動音解析ソフト-</h1>
+
+  <div id="left-page">
+    <p>目次</p>
+    <ui>
+      <li><a href="#h2-1">概要</a></li>
+      <li><a href="#h2-2">動作条件</a></li>
+      <li><a href="#h2-3">ファイル構成</a></li>
+      <li><a href="#install">インストールの手順</a></li>
+      <ul>
+        <li><a href="#dotnet">.Net 5</a></li>
+        <li><a href="#python">Python3.7</a></li>
+      </ul>
+      <li><a href="#h2-5">アンインストール</a></li>
+      <li><a href="#feature">各機能について</a></li>
+      <ul>
+        <li><a href="#h3-1">各部の名称</a></li>
+        <li><a href="#h3-2">詳細機能</a></li>
+        <ul>
+          <li><a href="#menubar">メニューバー</a></li>
+          <li><a href="#tab">操作タブ</a></li>
+          <li><a href="#graph">グラフ表示</a></li>
+          <li><a href="#thresholdSetting">閾値設定</a></li>
+        </ul>
+      </ul>
+      <li><a href="#h2-7">腸蠕動音解析の流れ</a></li>
+      <li><a href="#h2-8">FAQ</a></li>
+    </ui>
+  </div>
+
+  <div id="main-page">
+    <h2 id="h2-1">概要</h2>
+    <p>腸蠕動音の解析を補助するソフトウェアです。</p>
+    <h2 id="h2-2">動作条件</h2>
+    <p>Windows 10</p>
+    <p><a href="https://dotnet.microsoft.com/" target="_blank" rel="noopener noreferrer">.NET 5 ランタイム</a></p>
+    <p><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python3.7</a>と各パッケージ</p>
+    <h2 id="h2-3">ファイル構成</h2>
+    <table>
+      <tr>
+        <td>BowelSoundAnalyzer.exe</td>
+        <td>実行ファイル</td>
+      </tr>
+      <tr>
+        <td>説明書.htmlとimgフォルダ</td>
+        <td>説明書用ファイル</td>
+      </tr>
+    </table>
+    <h2 id="install">インストールの手順</h2>
+    <p>本ソフトウェアを使用する前に、前提となるソフトウェアをインストールする必要があります。<br/>
+      そのため、前提ソフトウェアインストールの手順を以下の説明で表し、その操作を支援するソフトウェア「InstallSupporter.exe」（以下、支援ソフトウェアと表記）を同梱しています。</p>
+    <h3 id="supporter">支援ソフトウェア「InstallSupporter.exe」</h3>
+    <img class="install" src="img/supporter.png" alt="インストール支援ソフト">
+    <p>この支援ソフトウェアでは、</p>
+    <ol>
+      <li>.Net 5のインストール</li>
+      <li>Python3.7のインストール</li>
+      <li>Python3.7の初期設定</li>
+    </ol>
+    <p>をそれぞれ行うことができます。以下の手順にしたがい、1から順番にボタンをクリックしてください。</p>
+    <h3 id="dotnet">.Net 5</h3>
+    <ol>
+      <li>支援ソフトウェアの「1: .Net 5のインストール」をクリックし、<a href="https://dotnet.microsoft.com/download" target="_blank"
+          rel="noopener noreferrer">こちら</a>のWebサイトにアクセスします。</li>
+      <li>「Download .NET Runtime」をクリックします。</li>
+      <img class="install" src="img/n_download1.png" alt=".Net5のランタイムダウンロードページ1">
+      <li>「Download x64」をクリックします。</li>
+      <img class="install" src="img/n_download2.png" alt=".Net5のランタイムダウンロードページ2">
+      <li>ダウンロードが始まるので、「名前を付けて保存」します。</li>
+      <img class="install" src="img/n_download3.png" alt=".Net5のランタイムダウンロードページ3">
+      <li>ダウンロードしたファイルを実行します。</li>
+      <li>「インストール」をクリックします。</li>
+      <img class="install" src="img/n_install1.png" alt=".Net5のランタイムインストール">
+      <li>「閉じる」をクリックして、インストールを終了します。</li>
+      <img class="install" src="img/n_install2.png" alt=".Net5のランタイムインストール終了">
+    </ol>
+    <h3 id="python">Python3.7</h3>
+    <ol>
+      <li>支援ソフトウェアの「2: Python3.7のインストール」をクリックし、<a href="https://dotnet.microsoft.com/download" target="_blank"
+        rel="noopener noreferrer">こちら</a>のWebサイトにアクセスします。</li>
+      <li>「Windows x86-64 executable installer」をクリックし、「名前を付けて保存」します。</li>
+      <img class="install" src="img/p_download.png" alt="Python3.7ダウンロードページ">
+      <li>ダウンロードしたファイルを実行します。</li>
+      <li><font color="Red"><strong>「Add Python 3.7 to PATH」にチェックを入れてから</strong></font>、「Install Now」をクリックします。</li>
+      <img class="install" src="img/p_install1.png" alt="Python3.7インストール">
+      <li>「Close」をクリックして、インストールを終了します。</li>
+      <img class="install" src="img/p_install2.png" alt="Python3.7インストール終了">
+      <li>支援ソフトウェアの「3: Python3.7の初期設定」をクリックします。</li>
+      <li>自動で初期設定が行われます。以下のメッセージが表示されたら完了です。</li>
+      <img class="install" src="img/prompt.png" alt="コマンドプロンプトでPython初期設定">
+      <li>BowelSoundAnalyzerのフォルダを適当な場所に移動して実行してください。</li>
+    </ol>
+    <h2 id="h2-5">アンインストール</h2>
+    <p>BowelSoundAnalyzerのフォルダごと削除してください。</p>
+
+    <h2 id="feature">各機能について</h2>
+
+    <h3 id="h3-1">各部の名称</h3>
+
+    <p><img src="img/main.png" alt="メイン画面" width="60%" height="60%"></p>
+
+    <ol>
+      <li>ウィンドウ</li>
+      <li><a href="#menubar">メニューバー</a></li>
+      <li><a href="#tab">操作タブ</a></li>
+      <li><a href="#graph">グラフ表示エリア</a></li>
+      <li>音声情報</li>
+    </ol>
+
+    <h3 id="h3-2">詳細機能</h3>
+
+    <h4 id="menubar">メニューバー</h4>
+    <p>クリックすることで、下にメニューが表示されます。</p>
+
+    <p><img src="img/menu.png" alt="ファイル" width="20%" height="20%"></p>
+
+    <table>
+      <tr>
+        <td id="open">「開く」</td>
+        <td>音声ファイルを読み込みます。<br>[.wav]の拡張子に対応しています。</td>
+      </tr>
+      <tr>
+        <td>「画像として保存」</td>
+        <td>表示中のグラフのスクリーンショットを撮影し、画像として保存します。</td>
+      </tr>
+      <tr>
+        <td>「閉じる」</td>
+        <td>既に開いている音声ファイルを閉じます。</td>
+      </tr>
+      <tr>
+        <td>「終了」</td>
+        <td>本ソフトウェアを終了します。</td>
+      </tr>
+    </table>
+
+    <h4 id="tab">操作タブ</h4>
+    <p>
+      音声の再生やグラフの操作方法の変更などさまざまな操作を行います。<br>
+      ボタン上にマウスカーソルを重ねると、簡単なヘルプを表示します。
+    </p>
+
+    <p><img src="img/tab1.png" alt="タブ1" width="50%" height="50%"></p>
+
+    <table>
+      <tr>
+        <td id="play">再生</td>
+        <td>音声を再生します。再生中に押すと一時停止します。</td>
+      </tr>
+      <tr>
+        <td>停止</td>
+        <td>音声を停止します。</td>
+      </tr>
+      <!--
+      <tr>
+        <td id="prev">戻る</td>
+        <td>※「<a href="#onlySoundSection">有音区間のみ</a>」選択中のみ有効<br>選択中の有音区間から前の位置まで戻ります。<br>ダブルクリックすると1つ前の区間まで移動します。</td>
+      </tr>
+      <tr>
+        <td id="next">進む</td>
+        <td>※「<a href="#onlySoundSection">有音区間のみ</a>」選択中のみ有効<br>選択中の有音区間から次の位置まで進みます。</td>
+      </tr>
+      -->
+      <tr>
+        <td id="loop">ループ再生</td>
+        <td>音声を最後まで流しても初めに戻り再生し続けます。<br>「<a href="#onlySoundSection">有音区間のみ</a>」選択中は選択中の有音区間がループ再生されます。</td>
+      </tr>
+      <!--
+      <tr>
+        <td>有音区間のみ</td>
+        <td>STEの閾値を超えた有音区間のみ再生します。</td>
+      </tr>
+      <tr>
+        <td>③窓関数サイズ</td>
+        <td>スペクトログラムを計算するために必要な窓関数のサイズを設定します。<br>値を大きくすると、横軸のデータ数（時間）が減り、縦軸のデータ数（周波数）が増えます。</td>
+      </tr>
+      <tr>
+        <td>④窓関数の移動幅</td>
+        <td>スペクトログラムを計算するために必要な窓関数の移動幅を設定します。<br>値を大きくすると、横軸のデータ数（時間）が減ります。</td>
+      </tr>
+    -->
+      <tr>
+        <td>ミュート設定</td>
+        <td>ミュートのon/offを切り替えます。</td>
+      </tr>
+      <tr>
+        <td>音量設定</td>
+        <td>PCの音量設定を変更します。</td>
+      </tr>
+    </table>
+
+    <p><img src="img/tab2.png" alt="タブ2" width="50%" height="50%"></p>
+
+    <table>
+      <tr>
+        <td>「グラフの拡大・縮小」</td>
+        <td>グラフを拡大・縮小する操作のon/offを切り替えます。</td>
+      </tr>
+      <tr>
+        <td>「x軸グラフの外側まで表示する」</td>
+        <td>グラフから音声ファイルの長さをはみ出る部分まで表示可能にします。</td>
+      </tr>
+      <tr>
+        <td>「y軸方向の移動と拡大・縮小」</td>
+        <td>x軸方向だけでなく、y軸方向も移動や拡大・縮小の操作が可能になります。</td>
+      </tr>
+      <tr>
+        <td>「グリッド線の表示」</td>
+        <td>グラフ上にグリッド線を表示します。</td>
+      </tr>
+      <tr>
+        <td>「シークバーにグラフを追従」</td>
+        <td>未実装です</td>
+        <!--<td>シークバーがグラフの表示範囲に存在しない場合、<br>グラフの表示範囲を自動的に変更します。</td>-->
+      </tr>
+      <tr>
+        <td>「波形表示」</td>
+        <td>波形グラフを表示します。</td>
+      </tr>
+      <tr>
+        <td>「スペクトログラム表示」</td>
+        <td>スペクトログラムを表示します。</td>
+      </tr>
+    </table>
+
+    <p><img src="img/tab3.png" alt="タブ3" width="50%" height="50%"></p>
+
+    <table>
+      <tr>
+        <td>「波形の色」</td>
+        <td>波形グラフの色を設定します。</td>
+      </tr>
+      <tr>
+        <td>「ノイズ区間の色」</td>
+        <td>波形グラフ上に表示されたノイズ区間の色を設定します。</td>
+      </tr>
+      <tr>
+        <td>「スペクトログラムの色」</td>
+        <td>スペクトログラムの色を約20種類の中から設定します。</td>
+      </tr>
+      <tr>
+        <td>表示範囲のリセット</td>
+        <td>グラフの表示範囲を初期状態に戻します。</td>
+      </tr>
+      <tr>
+        <td>グラフの表示範囲の設定</td>
+        <td>数値を入力して「Enter」キーを入力するか「変更」ボタンをクリックすることで、<br>グラフの表示範囲を設定します。</td>
+      </tr>
+    </table>
+
+
+
+    <h4 id="graph">グラフ表示エリア</h4>
+
+    <p>
+      上側に波形、下側にスペクトログラムを表示します。<br>
+      縦の赤線が再生時間を表し、波形グラフ内の薄い水色の区間（初期設定）がノイズ区間を表しています。
+    </p>
+
+    <p><img src="img/graph.png" alt="グラフ表示エリア" width="50%" height="50%"></p>
+
+    <table>
+      <tr>
+        <th colspan="2">マウス操作の方法</th>
+      </tr>
+      <tr>
+        <td>左クリック</td>
+        <td>音声の再生位置をクリックした位置に移動します。</td>
+      </tr>
+      <tr>
+        <td>右クリックドラッグ</td>
+        <td>ドラッグに合わせてグラフ全体を移動させます。</td>
+      </tr>
+      <tr>
+        <td>マウスホイール</td>
+        <td>マウスカーソルの位置を中心にグラフの拡大・縮小を行います。</td>
+      </tr>
+    </table>
+
+    <h4 id="thresholdSetting">閾値設定</h4>
+    <p>STE(Short Time Energy)のグラフを見ながら閾値を設定することができます。</p>
+
+    <p><img src="img/ste.png" alt="閾値設定" width="40%" height="40%"></p>
+
+    <table>
+      <tr>
+        <td>STEグラフ</td>
+        <td>STE(Short Time Energy)のグラフです。<br>赤線が閾値で、薄い水色の区間（初期設定）が閾値を超えた範囲です。<br>グラフ上をクリックすると閾値を変更できます。</td>
+      </tr>
+      <tr>
+        <td>STEの閾値</td>
+        <td>STE(Short Time Energy)の閾値を数値で入力します。<br>入力された値は、直ちに反映されます。</td>
+      </tr>
+      <tr>
+        <td>「変更」</td>
+        <td>STEの閾値として設定した値を保存して、この設定画面を閉じます。</td>
+      </tr>
+      <tr>
+        <td>「キャンセル」</td>
+        <td>STEの閾値の設定をキャンセルして、閾値を元に戻します。</td>
+      </tr>
+    </table>
+
+    <!--
+    <h4 id="onlySoundSection">有音区間のみ再生モードについて</h4>
+    <p><img src="img/img9.png" alt="有音区間のみ" width="40%" height="40%"></p>
+    <p>
+      「有音区間のみ」をONにすると有音区間のみ再生することができます。<br>
+      この時、波形上に表示された緑色の区間を再生します。<br>
+      この緑色の区間は、有音区間である薄い水色の区間の範囲を広げたものになります。<br>
+      ここで、「<a href="#next">進む</a>」ボタンか「<a href="#prev">戻る</a>」ボタンをクリックすると再生範囲を隣の区間に移動可能です。<br>
+      また、「<a href="#loop">ループ再生</a>」ボタンをONにすることで有音区間のみ繰り返し再生することができます。
+    </p>
+    -->
+
+    <h2 id="h2-7">腸蠕動音解析の流れ</h2>
+    <ol>
+      <li>BowelSoundAnalyzer.exeをダブルクリックして実行します。</li>
+      <li>「ファイル」→「<a href="#open">開く</a>」から、音声ファイルを選択して読み込みます。</li>
+      <li>グラフ上部の音声波形上に示された白色の領域がSTEの閾値を超えた範囲（有音区間）です。</li>
+      <li>「編集」→「<a href="#thresholdSetting">閾値設定</a>」からSTEのグラフを表示し、STEの閾値を設定します。クリックした場所が閾値になります。</li>
+      <!--<li>「<a href="#onlySoundSection">有音区間のみ</a>」ボタンをクリックしONにします。</li>-->
+      <li>「<a href="#play">再生</a>」ボタンをクリックすることで、有音区間の再生を行います。</li>
+      <!--<li>「<a href="#next">進む</a>」ボタンと「<a href="#prev">戻る</a>」ボタンをクリックすることで、再生したい有音区間を選択します。</li>-->
+      <li>マウスドラッグやマウスホイール、表示範囲選択用へのテキスト入力でグラフの表示範囲を調整します。</li>
+    </ol>
+    <p>※その他、詳細な仕様は、<a href="#feature">各機能について</a>をご覧ください。</p>
+
+    <h2 id="h2-8">FAQ</h2>
+
+    <p class="question">Windows 10のコンピュータを使用しているにも関わらずソフト起動時にエラーが出る。</p>
+    <p class="answer">本ソフトウェアを使用前に、ランタイムのインストールが必要です。詳しくは、<a href="#dotnet">こちら</a>をご覧ください。</p>
+
+    <p class="question">音声ファイル読み込み時にソフトが終了する、落ちる。</p>
+    <p class="answer">本ソフトウェアを使用前に、Pythonのインストールと設定が必要です。詳しくは、<a href="#python">こちら</a>をご覧ください。</p>
+
+    <p class="question">音声の読み込み時間が長い、遅い。</p>
+    <p class="answer">音声の長さに比例して、読み込み時間が増加します。音声を短く区切ってから使用してください。</p>
+
+    <p class="question">グラフの移動操作が重い、遅い。</p>
+    <p class="answer">音声の長さとコンピュータの性能によっては重くなります。数値入力で表示範囲を変更するようにしてください。</p>
+
+    <p class="question">窓関数のサイズを設定したらソフトが強制終了した。</p>
+    <p class="answer">極端な値を設定すると、処理が重くなってしまいます。デフォルトの値に近い値に設定してください。</p>
+
+    <p class="question">グラフを拡大して再生するとシークバー（赤線）が見えなくなる。</p>
+    <p class="answer">グラフをかなり拡大した状態にすると、シークバーが一瞬で通り過ぎてしまい見えなくなってしまいます。</p>
+  </div>
+</body>
+
+</html>
